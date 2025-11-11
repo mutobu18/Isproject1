@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image:url(back.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container,
+.signup-container,
+.forgot-container {
+    background: white;
+    width: 350px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: none;
+}
+
+.login-container {
+    display: block;
+}
+
+h2 {
+    text-align: center;
+    color: #0D47A1;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0D47A1;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1565C0;
+}
+
+.password-error {
+    color: red;
+    font-size: 13px;
+}
+
+.switch-links {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.switch-links a {
+    display: block;
+    color: #0D47A1;
+    margin-top: 5px;
+}
+
+.switch-form {
+    text-align: center;
+    margin-top: 15px;
+}
+.switch-form a {
+    color: #0D47A1;
+    cursor: pointer;
+}
