@@ -1,10 +1,18 @@
+<?php
+include 'db.php'; // connect to database
+
+// Fetch pending requests
+$sql = "SELECT * FROM visit_log WHERE status='pending'";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hostel Manager Dashboard</title>
-    <link rel="stylesheet" href="manager.css">
+    <link rel="stylesheet" href="CSS/manager.css">
 </head>
 <body>
 
@@ -94,7 +102,21 @@
             </tr>
         </thead>
         <tbody id="requestsList">
-            <!-- JS inserts rows -->
+          <?php
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>
+                <td>".$row['id']."</td>
+                <td>".$row['studentID']."</td>
+                <td>".$row['visitorName']."</td>
+                <td>".$row['status']."</td>
+                <td>".$row['visitDate']."</td>
+              </tr>";
+    }
+} else {
+    echo "<tr><td colspan='5'>No requests found.</td></tr>";
+}
+?> 
         </tbody>
     </table>
 </section>
