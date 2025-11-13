@@ -17,14 +17,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $user['username'];
 
             // Redirect based on role
-            if ($user['role'] == "Student") {
-                header("Location: student_dashboard.php");
+            if ($user['role'] == "Student_Resident") {
+                header("Location: student.php");
             } elseif ($user['role'] == "Manager") {
-                header("Location: manager_dashboard.php");
+                header("Location: manager.php");
             } elseif ($user['role'] == "Security") {
-                header("Location: security_dashboard.php");
+                header("Location: securityofficer.php");
             } elseif ($user['role'] == "Admin") {
-                header("Location: admin_dashboard.php");
+                header("Location: admin.php");
             } else {
                 echo "Unknown role!";
             }

@@ -1,7 +1,7 @@
 <?php
 include 'db.php'; // connect to database
 
-// Fetch pending requests
+
 $sql = "SELECT * FROM visit_log WHERE status='pending'";
 $result = $conn->query($sql);
 ?>

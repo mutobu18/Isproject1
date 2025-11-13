@@ -1,6 +1,4 @@
-// ================================
-// SIDEBAR NAVIGATION
-// ================================
+
 const navButtons = document.querySelectorAll(".menu-btn");
 const sections = document.querySelectorAll("main .section, .request-form");
 

@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $role = $_POST['role'];
 
-    // You can add full_name and email later if your form includes them
+    
 
     // Hash the password for security
     $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
