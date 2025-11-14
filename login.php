@@ -1,36 +1,52 @@
 <?php
 session_start();
-include 'config.php';
+include 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM user_account WHERE username='$username'";
-    $result = $conn->query($sql);
+    // Prepare the statement
+    $stmt = $conn->prepare("SELECT * FROM user_account WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
+    // Check if user exists
+    if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
 
+        // Verify password
         if (password_verify($password, $user['password'])) {
+
+            // Save session
             $_SESSION['role'] = $user['role'];
             $_SESSION['username'] = $user['username'];
 
             // Redirect based on role
-            if ($user['role'] == "Student_Resident") {
-                header("Location: student.php");
-            } elseif ($user['role'] == "Manager") {
-                header("Location: manager.php");
-            } elseif ($user['role'] == "Security") {
-                header("Location: securityofficer.php");
-            } elseif ($user['role'] == "Admin") {
-                header("Location: admin.php");
-            } else {
-                echo "Unknown role!";
+            switch ($user['role']) {
+                case "Student_Resident":
+                    header("Location: student.php");
+                    exit();
+                case "Manager":
+                    header("Location: manager.php");
+                    exit();
+                case "Security":
+                    header("Location: securityofficer.php");
+                    exit();
+                case "Admin":
+                    header("Location: admin.php");
+                    exit();
+                default:
+                    echo "Unknown role!";
+                    exit();
             }
+
         } else {
             echo "Invalid password.";
         }
+
     } else {
         echo "User not found.";
     }

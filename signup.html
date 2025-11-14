@@ -3,45 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Visitor Management System</title>
-    <link rel="stylesheet" href="CSS/login.css">
-</head>
-<body>
-
-<!-- LOGIN FORM -->
-<div class="login-container" id="loginContainer">
-    <h2><strong>VMS</strong></h2>
-
-    <form id="loginForm" method="POST" action="login.php">
-        <div class="input-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username or email" required>
-        </div>
-
-        <div class="input-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            <p class="password-error" id="loginPassError"></p>
-            <small class="hint">Password must be exactly 6 characters</small>
-        </div>
-
-        
-
-
-        <button type="submit">Login</button>
-
-        <div class="switch-links">
-            <a href="signup.html" id="showSignup">Create Account</a>
-            <a href="#" id="showForgot">Forgot Password?</a>
-        </div>
-    </form>
-</div>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup - Visitor Management System</title>
     <!-- Link to your external CSS -->
     <link rel="stylesheet" href="signup.css">
@@ -103,29 +64,5 @@
     </form>
 </div>
 
-</body>
-</html>
-
-
-
-<!-- FORGOT PASSWORD -->
-<div class="forgot-container" id="forgotContainer">
-    <h2>Reset Password</h2>
-
-    <form id="forgotForm">
-        <div class="input-group">
-            <label for="forgotEmail">Enter your email</label>
-            <input type="email" id="forgotEmail" placeholder="example@gmail.com" required>
-        </div>
-
-        <button type="submit">Reset</button>
-
-        <p class="switch-form">
-            Back to <a href="#" id="backToLogin">Login</a>
-        </p>
-    </form>
-</div>
-
-<script src="login.js"></script>
 </body>
 </html>

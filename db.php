@@ -2,9 +2,9 @@
 // db.php
 
 $servername = "localhost";
-$username = "root"; // default XAMPP username
-$password = "";     // default XAMPP password is empty
-$dbname = "visitor-hostel-system"; // replace with your database name
+$username = "root"; 
+$password = "";    
+$dbname = "visitor-hostel-system"; 
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
